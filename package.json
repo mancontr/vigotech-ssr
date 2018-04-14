@@ -1,0 +1,15 @@
+{
+  "name": "server-side-example",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "babel-node server.js"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "express": "^4.16.3",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1"
+  }
+}
