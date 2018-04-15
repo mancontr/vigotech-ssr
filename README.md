@@ -11,21 +11,16 @@ Usa el selector de arriba para elegir el que quieras.
 
 Gracias!
 
-Ejemplo 1
+Ejemplo 2
 ---------
 
-En este ejemplo hemos configurado por separado la versión cliente y servidor.
+En este ejemplo hemos añadido Webpack tanto en cliente como en servidor.
 
-### Cliente
-La versión cliente consiste en un `index.htm` que carga React, ReactDOM, y
-la edición "standalone" de Babel, y la utiliza para ejecutar `client.js`, que
-contiene el código para renderizar un componente de ejemplo.
+Ahora tenemos un paso previo de compilación con Webpack + Babel,
+que se ejecuta para cada entorno, dándonos un fichero para node y
+otro para navegador.
 
-Para arrancarla, tan solo sirve esta carpeta a través de un servidor http
-(ya que en `file://` no funciona), y abre index.htm.
+Para ejecutarlo, primero debemos hacer `npm run build`, y luego:
 
-### Servidor
-La versión servidor está en `server.js`, y utiliza babel-node para transpilar
-en directo el código.
-
-Para arrancarla, haz `npm install` y luego `npm start`.
+- Para el cliente, tan solo abrir el index.htm (ya no es necesario servidor http)
+- Para el servidor, `npm start`

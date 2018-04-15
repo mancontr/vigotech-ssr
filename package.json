@@ -2,14 +2,18 @@
   "name": "server-side-example",
   "version": "0.1.0",
   "scripts": {
-    "start": "babel-node server.js"
+    "build": "rm -rf build && webpack --config webpack.config.js",
+    "start": "node build/server/server.js"
   },
   "dependencies": {
-    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "express": "^4.16.3",
     "react": "^16.3.1",
-    "react-dom": "^16.3.1"
+    "react-dom": "^16.3.1",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14",
+    "webpack-node-externals": "^1.7.2"
   }
 }
