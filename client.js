@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import Root from './Root'
+
 ReactDOM.render(
-  <h1>Hola, mundo!</h1>,
+  <Root />,
   document.getElementById('root')
 )
