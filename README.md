@@ -11,16 +11,10 @@ Usa el selector de arriba para elegir el que quieras.
 
 Gracias!
 
-Ejemplo 2
+Ejemplo 3
 ---------
 
-En este ejemplo hemos añadido Webpack tanto en cliente como en servidor.
+En este ejemplo hemos conectado entre si las partes cliente y servidor.
+Ya no tenemos dos aplicaciones separadas, sino una sola, universal.
 
-Ahora tenemos un paso previo de compilación con Webpack + Babel,
-que se ejecuta para cada entorno, dándonos un fichero para node y
-otro para navegador.
-
-Para ejecutarlo, primero debemos hacer `npm run build`, y luego:
-
-- Para el cliente, tan solo abrir el index.htm (ya no es necesario servidor http)
-- Para el servidor, `npm start`
+Para ejecutarla, primero debemos hacer `npm run build`, y luego `npm start`

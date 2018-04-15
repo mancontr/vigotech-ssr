@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 
 import Root from './Root'
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <Root />,
   document.getElementById('root')
 )
