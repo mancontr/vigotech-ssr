@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import reducers from '../store/reducers'
 import Root from '../Root'
 
-const store = createStore(reducers)
+const store = createStore(reducers, window.initialState)
 
 ReactDOM.hydrate(
   <Provider store={store}>
