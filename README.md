@@ -11,10 +11,9 @@ Usa el selector de arriba para elegir el que quieras.
 
 Gracias!
 
-Ejemplo 3
+Ejemplo 4
 ---------
 
-En este ejemplo hemos conectado entre si las partes cliente y servidor.
-Ya no tenemos dos aplicaciones separadas, sino una sola, universal.
+En este ejemplo hemos añadido Redux, tanto en cliente como en servidor.
 
-Para ejecutarla, primero debemos hacer `npm run build`, y luego `npm start`
+Para ejecutarlo, primero debemos hacer `npm run build`, y luego `npm start`

@@ -1,3 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-export default () => <h1>Hola, mundo!</h1>
+const Root = (props) => <h1>{props.message || '(sin mensaje)'}</h1>
+
+const mapStateToProps = (state) => ({ message: state.message })
+
+export default connect(mapStateToProps)(Root)
