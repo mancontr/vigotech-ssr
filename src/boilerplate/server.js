@@ -1,11 +1,12 @@
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import fs from 'fs'
+import path from 'path'
 import express from 'express'
 
-import Root from './Root'
+import Root from '../Root'
 
-const template = fs.readFileSync('./index.htm').toString()
+const template = fs.readFileSync(path.resolve('src', 'boilerplate', 'index.htm')).toString()
 
 const app = express()
 app.use(express.static('build/client'))

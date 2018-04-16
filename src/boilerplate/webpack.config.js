@@ -1,4 +1,5 @@
 const path = require('path')
+const appDir = path.resolve(__dirname, '..', '..')
 
 moduleConf = {
   rules: [
@@ -19,20 +20,20 @@ moduleConf = {
 module.exports = [
 
   {
-    entry: './client.js',
+    entry: path.resolve(appDir, 'src', 'boilerplate', 'client.js'),
     output: {
       filename: 'main.js',
-      path: path.resolve(__dirname, 'build', 'client')
+      path: path.resolve(appDir, 'build', 'client')
     },
     module: moduleConf,
     mode: 'development'
   },
 
   {
-    entry: './server.js',
+    entry: path.resolve(appDir, 'src', 'boilerplate', 'server.js'),
     output: {
       filename: 'server.js',
-      path: path.resolve(__dirname, 'build', 'server')
+      path: path.resolve(appDir, 'build', 'server')
     },
     externals: [ require('webpack-node-externals')() ],
     target: 'node',
