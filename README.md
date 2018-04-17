@@ -11,9 +11,9 @@ Usa el selector de arriba para elegir el que quieras.
 
 Gracias!
 
-Ejemplo 4
+Ejemplo 5
 ---------
 
-En este ejemplo hemos añadido Redux, tanto en cliente como en servidor.
+En este ejemplo hemos añadido React Router (v3) en cliente y servidor.
 
 Para ejecutarlo, primero debemos hacer `npm run build`, y luego `npm start`
