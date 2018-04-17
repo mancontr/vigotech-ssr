@@ -9,7 +9,6 @@ import express from 'express'
 
 import routes from '../routes'
 import reducers from '../store/reducers'
-import { demoAction } from '../store/actions'
 
 const template = fs.readFileSync(path.resolve('src', 'boilerplate', 'index.htm')).toString()
 
@@ -17,7 +16,6 @@ const app = express()
 app.use(express.static('build/client'))
 app.get('*', (req, res) => {
   const store = createStore(reducers)
-  store.dispatch(demoAction('Server says hi!'))
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
 
     const render = ReactDOMServer.renderToString(
