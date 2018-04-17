@@ -17,18 +17,30 @@ app.use(express.static('build/client'))
 app.get('*', (req, res) => {
   const store = createStore(reducers)
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
+    if (!renderProps) return
 
-    const render = ReactDOMServer.renderToString(
-      <Provider store={store}>
-        <RouterContext {...renderProps} />
-      </Provider>
+    const promises = renderProps.routes.map((route) =>
+      route.component &&
+      route.component.fetchData &&
+      route.component.fetchData(renderProps, store.dispatch, store.getState)
     )
-    const state = '<script>window.initialState = ' +
-      JSON.stringify(store.getState()) + '</script>'
-    const page = template
-      .replace('<!--CODE-->', render)
-      .replace('<!--STATE-->', state)
-    res.send(page)
+
+    Promise.all(promises)
+      .then(() => {
+
+        const render = ReactDOMServer.renderToString(
+          <Provider store={store}>
+            <RouterContext {...renderProps} />
+          </Provider>
+        )
+        const state = '<script>window.initialState = ' +
+          JSON.stringify(store.getState()) + '</script>'
+        const page = template
+          .replace('<!--CODE-->', render)
+          .replace('<!--STATE-->', state)
+        res.send(page)
+      })
+
   })
 })
 app.listen(3000)
